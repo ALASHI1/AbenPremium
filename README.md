@@ -1,4 +1,12 @@
 # Aben Premium
+## About the project
+This is a django application that provides a premimun content to user when the user signs up , this is done with the Stripe api.
+The application also has the following features:
+- User can sign up for 7 days
+- User can cancel the subscription
+- User can see the subscription status
+- User can see the current plan
+
 ## How to run the project
 Download the zip file or clone the repo to a folder any where on your system then install a virtual enviroment on your terminal if you dont have one already with
 
@@ -25,7 +33,7 @@ please note that you have to have python installed on your global computer to pr
 Clone the project into your computer using
 
 ```
-git clone https://ALASHI@bitbucket.org/alashi/aben-premium.git
+git clone https://github.com/ALASHI1/AbenPremium.git
 ```
 
 
