@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'auth/css/style.css' %}" />
+  </head>
+  <body>
+    <section class="ftco-section">
+      {% for field in form %} {{ field.errors.as_ul }} {% endfor %}
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+            <div class="wrap d-md-flex">
+              <div
+                class="img"
+                style="background-image: url({% static 'auth/images/login.png' %})"
+              ></div>
+              <div class="login-wrap p-4 p-md-5">
+                <div class="d-flex">
+                  <div class="w-100">
+                    <h3 class="mb-4">Sign Up</h3>
+                  </div>
+                </div>
+                <form method="post" class="signin-form" id="payment-form">
+                  {% csrf_token %}
+                  <div class="form-group mb-3">
+                    <label class="label" for="name">Username</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      name="username"
+                      maxlength="150"
+                      autocapitalize="none"
+                      autocomplete="username"
+                      autofocus=""
+                      required=""
+                      id="id_username"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="label" for="email">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      maxlength="254"
+                      required=""
+                      id="id_email"
+                      class="form-control"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="label" for="password1">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password1"
+                      autocomplete="new-password"
+                      required=""
+                      id="id_password1"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="label" for="password2"
+                      >Password confirmation</label
+                    >
+                    <input
+                      type="password"
+                      name="password2"
+                      autocomplete="new-password"
+                      required=""
+                      id="id_password2"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div style="background: aliceblue" class="form-group mb-3">
+                    <label class="label" for="card-element"
+                      >Credit or debit card</label
+                    >
+                    <div
+                      id="card-element"
+                      class="StripeElement StripeElement--empty"
+                    >
+                      <div
+                        class="__PrivateStripeElement"
+                        style="
+                          margin: 0px !important;
+                          padding: 0px !important;
+                          border: none !important;
+                          display: block !important;
+                          background: transparent !important;
+                          position: relative !important;
+                          opacity: 1 !important;
+                        "
+                      >
+                        <iframe
+                          frameborder="0"
+                          allowtransparency="true"
+                          scrolling="no"
+                          name="__privateStripeFrame3"
+                          allowpaymentrequest="true"
+                          src="https://js.stripe.com/v3/elements-inner-card-8a434729e4eb82355db4882974049278.html#style[base][color]=%2332325d&amp;style[base][lineHeight]=18px&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=card&amp;wait=false&amp;rtl=false&amp;features[noop]=false&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js%2Felements%2Fquickstart&amp;controllerId=__privateStripeController0"
+                          title="Secure payment input frame"
+                          style="
+                            border: none !important;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                            width: 1px !important;
+                            min-width: 100% !important;
+                            overflow: hidden !important;
+                            display: block !important;
+                            height: 18px;
+                          "
+                        ></iframe
+                        ><input
+                          class="__PrivateStripeElement-input"
+                          aria-hidden="true"
+                          style="
+                            border: none !important;
+                            display: block !important;
+                            position: absolute !important;
+                            height: 1px !important;
+                            top: 0px !important;
+                            left: 0px !important;
+                            padding: 0px !important;
+                            margin: 0px !important;
+                            width: 100% !important;
+                            opacity: 0 !important;
+                            background: transparent !important;
+                            pointer-events: none !important;
+                            font-size: 16px !important;
+                          "
+                        /><input
+                          class="__PrivateStripeElement-safariInput"
+                          aria-hidden="true"
+                          tabindex="-1"
+                          style="
+                            border: none !important;
+                            display: block !important;
+                            position: absolute !important;
+                            height: 1px !important;
+                            top: 0px !important;
+                            left: 0px !important;
+                            padding: 0px !important;
+                            margin: 0px !important;
+                            width: 100% !important;
+                            opacity: 0 !important;
+                            background: transparent !important;
+                            pointer-events: none !important;
+                            font-size: 16px !important;
+                          "
+                        />
+                      </div>
+                    </div>
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert"></div>
+                  </div>
+                  <div
+                    id="stripe-token-handler"
+                    type="hidden"
+                    class="is-hidden"
+                  >
+                    <span type="hidden" class="token"></span>
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      style="
+                        border: 1px solid black;
+                        color: white;
+                        background: black;
+                      "
+                      class="form-control rounded submit px-3"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                  <div class="form-group d-md-flex">
+                    <div class="w-50 text-left">
+                      <label class="checkbox-wrap checkbox-primary mb-0"
+                        >Remember Me
+                        <input type="checkbox" checked />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </form>
+                <p class="text-center">
+                  Already a member? <a href="{% url 'login' %}">Sign In</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{% static 'auth/js/jquery.min.js' %}"></script>
+    <script src="{% static 'auth/js/popper.js' %}"></script>
+    <script src="{% static 'auth/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'auth/js/main.js' %}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'stripe.js' %}"></script>
+  </body>
+</html>

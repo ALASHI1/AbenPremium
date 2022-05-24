@@ -1,0 +1,346 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <a href="{% url 'home' %}"
+          ><img
+            src="{% static 'assets/img/logo.png' %}"
+            alt=""
+            class="img-fluid"
+        /></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a class="getstarted scrollto" href="{% url 'dashboard' %}"
+              >Dashboard</a
+            >
+          </li>
+          {% else %}
+          <li>
+            <a class="getstarted scrollto" href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+        >
+          <h1 data-aos="fade-up">Grow your business with ABEN</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">
+            Aben is the MarketingOS that alerts, prescribes executes, and
+            measures marketing ROI
+          </h2>
+          <h2 data-aos="fade-up" data-aos-delay="900">
+            Sign up to get Premium free for 7 days <br />Just $49.99/month
+            after. Cancel anytime.
+          </h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a
+              href="{% url 'django_registration_register' %}"
+              class="btn-get-started scrollto"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div
+          class="col-lg-6 order-1 order-lg-2 hero-img"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <img
+            src="{% static 'assets/img/main.png' %}"
+            class="img-fluid animated"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              With POS data from over 100K restaurants and card data from the
+              networks including the customer behind the card - Aben collapses
+              the marketing stack with the only Marketing OS a business could
+              ever need.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Open</li>
+              <li><i class="ri-check-double-line"></i> Frank</li>
+              <li><i class="ri-check-double-line"></i> Candid</li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-6 pt-4 pt-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <p>
+              Aben means open in Danish, and we’re sticklers for transparency.
+              Adhering to data science principles since day one, Aben was
+              founded on the idea that the data available to the largest
+              enterprises should be democratized for all businesses to leverage.
+              Through our proprietary data and machine learning algorithms, we
+              have established a single truth through real-world spend across
+              local markets, complete with recommendations, automation, and
+              measurement for all
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+        <div class="row">
+          <div
+            class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+            data-aos="fade-right"
+            data-aos-delay="150"
+          >
+            <img
+              src="{% static 'assets/img/counts-img.svg' %}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+
+          <div
+            class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="65"
+                      data-purecounter-duration="1"
+                      class="purecounter"
+                    ></span>
+                    <p>
+                      <strong>Happy Clients</strong> Currently managing over 60
+                      business
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-journal-richtext"></i>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="85"
+                      data-purecounter-duration="1"
+                      class="purecounter"
+                    ></span>
+                    <p>
+                      <strong>Projects</strong> Actively Engaging in over 80
+                      Projects
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-clock"></i>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="18"
+                      data-purecounter-duration="1"
+                      class="purecounter"
+                    ></span>
+                    <p>
+                      <strong>Years of experience</strong> Over 15 years of
+                      quality experience
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-award"></i>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="15"
+                      data-purecounter-duration="1"
+                      class="purecounter"
+                    ></span>
+                    <p>
+                      <strong>Awards</strong> Mutiple Awards recived in
+                      outstanding achivements
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End .content-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Counts Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="contact-about">
+              <h3>ABEN</h3>
+              <p>
+                Aben means open in Danish, and we’re sticklers for transparency.
+                Adhering to data science principles since day one, Aben was
+                founded on the idea that the data available to the largest
+                enterprises should be democratized for all businesses to
+                leverage. Through our proprietary data and machine learning
+                algorithms, we have established a single truth through
+                real-world spend across local markets, complete with
+                recommendations, automation, and measurement for all
+              </p>
+              <div class="social-links">
+                <a href="https://twitter.com/joinaben" class="twitter"
+                  ><i class="bi bi-twitter"></i
+                ></a>
+                <a href="https://facebook.com/joinAben" class="facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/joinaben/"
+                  class="linkedin"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mt-4 mt-md-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>12 Water Mark Way<br />The Woodlands, TX 77381 USA</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>info@joinaben.com</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>(415) 797-4210</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-5 col-md-12"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <form method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="id_name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="id_email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  id="id_subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  id="id_message"
+                  rows="5"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
+
+  <a
+    href="#"
+    class="back-to-top d-flex align-items-center justify-content-center"
+    ><i class="bi bi-arrow-up-short"></i
+  ></a>
+</body>
+{% endblock %}

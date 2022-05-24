@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aben</title>
+</head>
+<body>
+    <style>
+       .tri {
+        position: absolute;
+        width: 511.93px;
+        height: 478.77px;
+        left: 495.42px;
+        top: 150px;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transform: rotate(-49.69deg);}
+        .sideimg{
+            position: absolute;
+            width: 430px;
+            height: 369px;
+            left: -26px;
+            top: 405px;
+        }
+        .text{
+            position: absolute;
+            width: 1190px;
+            height: 156px;
+            left: 270px;
+            top: 218px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 50px;
+            color: #000000;
+        }
+    </style>
+<main class="tri">
+</main> 
+<div>
+    <img class="sideimg" src="{% static 'auth/images/login.png' %}" />
+</div>
+<div class="text">
+    <p>A verification mail has been sent to you</p>
+    <p></p>Please verify your account to enjoy 7 days free premium</p>
+</div>
+</body>
+</html>
