@@ -8,6 +8,7 @@ Django==4.0.3
 django-anymail==8.5
 django-registration==3.2
 flake8==4.0.1
+gunicorn==20.1.0
 idna==3.3
 mccabe==0.6.1
 mypy-extensions==0.4.3

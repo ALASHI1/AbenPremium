@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Account',
     'Premium',
-    "django_registration",
+    'django_registration',
     'anymail'
 ]
 
@@ -85,7 +85,7 @@ DATABASES = {
        'NAME': 'abenbackend',
        'USER': 'abenbackenduser',
        'PASSWORD': 'Aben12345',
-       'HOST': 'localhost',
+       'HOST': 'db',
        'PORT': '5432',
    }
 }

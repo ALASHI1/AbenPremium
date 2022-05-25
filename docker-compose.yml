@@ -1,0 +1,42 @@
+version: "3"
+   
+services:
+  db:
+    restart: always
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    container_name: db
+    networks:
+      - djangonetwork
+    environment:
+      - POSTGRES_DB=abenbackend
+      - POSTGRES_USER=abenbackenduser
+      - POSTGRES_PASSWORD=Aben12345
+      
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=abenbackend
+      - POSTGRES_USER=abenbackenduser
+      - POSTGRES_PASSWORD=Aben12345
+    depends_on:
+      - db
+    links:
+      - db:db
+    networks:
+      - djangonetwork
+    
+volumes:  
+  postgres_data:
+
+networks:
+    djangonetwork:
+        driver: bridge
